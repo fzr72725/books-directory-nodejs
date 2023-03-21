@@ -7,6 +7,16 @@ router.get('/', (req, res) => {
   res.json(books);
 });
 
+// Call python
+router.get('/pythonTest', (req, res) => {
+  const spawn = require("child_process").spawn;
+  const pythonProcess = spawn('python3',["script.py"]);
+  pythonProcess.stdout.on('data', (data) => {
+    // Do something with the data returned from python script
+    res.json(String.fromCharCode(...data));
+  });
+});
+
 // Get a specific book
 router.get('/:id', (req, res) => {
   const { id } = req.params;

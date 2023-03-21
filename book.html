@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Hello World</title>
+</head>
+<body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+     $.ajax({
+        type: "GET",
+        url: "http://localhost:3000/api/v1/books/pythonTest",
+        contentType: 'application/json',
+        success: function(res) {
+               const div = document.getElementById('books');
+               const span = div.firstElementChild;
+               span.innerHTML = JSON.stringify(res);
+               //alert("success!");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+                alert("error");
+        },
+    });
+});
+</script>
+
+
+<p>Hello World!</p>
+<div id = "books">
+    <span></span>
+</div>
+</body>
+</html>
