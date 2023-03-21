@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 // Call python
 router.get('/pythonTest', (req, res) => {
   const spawn = require("child_process").spawn;
-  const pythonProcess = spawn('python3',["script.py"]);
+  const pythonProcess = spawn('/usr/local/Cellar/jupyterlab/3.6.1/libexec/bin/python3.11',["test1.py"]);
   pythonProcess.stdout.on('data', (data) => {
     // Do something with the data returned from python script
     res.json(String.fromCharCode(...data));
