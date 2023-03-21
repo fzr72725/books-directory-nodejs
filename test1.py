@@ -9,7 +9,7 @@ df = pd.DataFrame(data=d)
 
 # dataToSendBack = "This is from Python"
 # print(dataToSendBack)
-print(df)
+print(df.to_html())
 sys.stdout.flush()
 
 
