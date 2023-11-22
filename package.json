@@ -26,17 +26,5 @@
   "bugs": {
     "url": "https://github.com/chandrangreat/books-directory-nodejs/issues"
   },
-  "homepage": "https://github.com/chandrangreat/books-directory-nodejs#readme",
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@now/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.js"
-    }
-  ]
+  "homepage": "https://github.com/chandrangreat/books-directory-nodejs#readme"
 }
