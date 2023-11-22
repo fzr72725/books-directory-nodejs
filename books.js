@@ -4,21 +4,24 @@ const books = require('./books.json');
 
 // Get all the books
 router.get('/', (req, res) => {
+  console.log('ZZZZZ get all books');
   res.json(books);
 });
 
 // Call python
-router.get('/pythonTest', (req, res) => {
-  const spawn = require("child_process").spawn;
-  const pythonProcess = spawn('/usr/local/Cellar/jupyterlab/3.6.1/libexec/bin/python3.11',["test1.py"]);
-  pythonProcess.stdout.on('data', (data) => {
-    // Do something with the data returned from python script
-    res.json(String.fromCharCode(...data));
-  });
-});
+// router.get('/pythonTest', (req, res) => {
+//   const spawn = require("child_process").spawn;
+//   const pythonProcess = spawn('/usr/local/Cellar/jupyterlab/3.6.1/libexec/bin/python3.11',["test1.py"]);
+//   pythonProcess.stdout.on('data', (data) => {
+//     // Do something with the data returned from python script
+//     console.log(`ZZZZZ calling Python ${data}`);
+//     res.json(String.fromCharCode(...data));
+//   });
+// });
 
 // Get a specific book
 router.get('/:id', (req, res) => {
+  console.log('ZZZZZ get one book');
   const { id } = req.params;
   res.json(books.filter((ele) => ele.id === parseInt(id)));
 });
