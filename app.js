@@ -1,12 +1,12 @@
-import books from './books';
+const books = require('./books');
 const express = require('express');
-const port = 3000;
+const port = 3009;
 //const books = require('./books');
 
 const app = express();
 
 app.use(express.json());
-app.use('/api/v1/books', books);
+app.use('/', books);
 
 app.use(express.static('.'))
 
