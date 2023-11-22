@@ -6,7 +6,7 @@ const port = 3009;
 const app = express();
 
 app.use(express.json());
-app.use('/', books);
+app.use('/api/v1/books', books);
 
 app.use(express.static('.'))
 
