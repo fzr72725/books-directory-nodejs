@@ -4,6 +4,9 @@ const port = 3009;
 //const books = require('./books');
 
 const app = express();
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
 
 app.use(express.json());
 app.use('/api/v1/books', books);
@@ -26,9 +29,7 @@ module.exports = app
 //   console.log(`API listening on PORT ${PORT} `)
 // })
 
-// app.get('/', (req, res) => {
-//   res.send('Hey this is my API running 🥳')
-// })
+
 
 // app.get('/about', (req, res) => {
 //   res.send('This is my about route..... ')
